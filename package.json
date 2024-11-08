@@ -1,15 +1,15 @@
 {
   "devDependencies": {
-    "cypress": "^9.7.0",
+    "axe-core": "^4.10.2",
+    "cypress": "^13.15.2",
+    "cypress-axe": "^1.5.0",
     "cypress-xpath": "^2.0.1",
     "mochawesome": "^7.1.3"
   },
   "scripts": {
     "cy:run": "cypress run",
-    "cy:runReporte":"cypress run --browser chrome --reporter mochawesome",
+    "cy:runReporte": "cypress run --browser chrome --reporter mochawesome",
     "cy:chrome": "cypress run --browser chrome",
     "cy:edge": "cypress run --browser edge"
   }
 }
-
-
