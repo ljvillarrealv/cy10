@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-11-08T21:12:00.992Z",
+    "end": "2024-11-08T21:12:04.723Z",
+    "duration": 3731,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1774f667-9597-4eb5-93ba-56092e810ce0",
+      "title": "",
+      "fullFile": "cypress/integration/4-APISs/E2Ejemplos.cy.js",
+      "file": "cypress/integration/4-APISs/E2Ejemplos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a5b90dca-afaf-4407-868b-26371fc321dc",
+          "title": "E2E",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sin loguear",
+              "fullTitle": "E2E Sin loguear",
+              "timedOut": null,
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('https://the-internet.herokuapp.com/basic_auth')\n    //cy.get('p').should('include.text', 'Congratulation')",
+              "err": {},
+              "uuid": "e91d5a65-2223-4783-8bbf-74ac259844e9",
+              "parentUUID": "a5b90dca-afaf-4407-868b-26371fc321dc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logeando usando auth de Cypress",
+              "fullTitle": "E2E Logeando usando auth de Cypress",
+              "timedOut": null,
+              "duration": 1099,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/basic_auth', {\n  auth: {\n    username: 'admin',\n    password: 'admin'\n  }\n});\ncy.get('p').should('include.text', 'Congratulation');",
+              "err": {},
+              "uuid": "87cc0d9f-a88c-4605-85fc-d7e90481daa8",
+              "parentUUID": "a5b90dca-afaf-4407-868b-26371fc321dc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logear con las credenciales en la url",
+              "fullTitle": "E2E Logear con las credenciales en la url",
+              "timedOut": null,
+              "duration": 273,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth');\ncy.get('p').should('include.text', 'Congratulation');",
+              "err": {},
+              "uuid": "e3bba630-0163-4cae-aac0-8db3534a8e0a",
+              "parentUUID": "a5b90dca-afaf-4407-868b-26371fc321dc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logear con un form, usando un request del tipo POST",
+              "fullTitle": "E2E Logear con un form, usando un request del tipo POST",
+              "timedOut": null,
+              "duration": 703,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/');\ncy.request({\n  method: 'POST',\n  url: '/authenticate',\n  form: true,\n  body: {\n    username: 'tomsmith',\n    password: 'SuperSecretPassword!'\n  }\n});\ncy.getCookie('rack.session').should('exist');\ncy.visit('https://the-internet.herokuapp.com/secure');\ncy.get('.subheader').should('include.text', 'Welcome');",
+              "err": {},
+              "uuid": "ffa02fd1-fbec-4c74-9af4-2f4b55bf8405",
+              "parentUUID": "a5b90dca-afaf-4407-868b-26371fc321dc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mismo test anterior, pero con comando personalizado",
+              "fullTitle": "E2E Mismo test anterior, pero con comando personalizado",
+              "timedOut": null,
+              "duration": 197,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.subheader').should('include.text', 'Welcome');",
+              "err": {
+                "message": "TypeError: cy.login is not a function",
+                "estack": "TypeError: cy.login is not a function\n    at Context.eval (https://the-internet.herokuapp.com/__cypress/tests?p=cypress\\integration\\4-APISs\\E2Ejemplos.cy.js:133:8)",
+                "diff": null
+              },
+              "uuid": "deb3fe1a-0b3c-4563-aa0e-1d29f6776e90",
+              "parentUUID": "a5b90dca-afaf-4407-868b-26371fc321dc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e91d5a65-2223-4783-8bbf-74ac259844e9",
+            "87cc0d9f-a88c-4605-85fc-d7e90481daa8",
+            "e3bba630-0163-4cae-aac0-8db3534a8e0a",
+            "ffa02fd1-fbec-4c74-9af4-2f4b55bf8405"
+          ],
+          "failures": [
+            "deb3fe1a-0b3c-4563-aa0e-1d29f6776e90"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2291,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

@@ -28,7 +28,7 @@ Cypress.Commands.add('login', () =>{
     cy.visit('https://the-internet.herokuapp.com/secure')
 
 })
-//Funcion que toma las nuevas ventanas y las visualiza dentro de la misma ventana
+//Funcion que toma las nuevas ventanas y las visualiza dentro de la misma ventanacc
 Cypress.Commands.add('visitInSameTab', (url) =>{
     cy.on('window:before:load',(win)=>{
         cy.stub(win, 'open').as('windowOpen').callsFake(()=>{
